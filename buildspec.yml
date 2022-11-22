@@ -35,7 +35,7 @@ phases:
        #- yum install zip
   build:
     commands:
-       - zip –r HistLambda.zip HistLambda
+       - zip HistLambda.zip HistLambda
        - ls
        - aws s3 cp HistLambda.zip s3://edm-csd-datalake-dev/
       # - command
