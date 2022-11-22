@@ -29,10 +29,10 @@ phases:
     #commands:
       # - command
       # - command
-  pre_build:
-    commands:
-       - yum update
-       - yum install zip
+  #pre_build:
+    #commands:
+       #- yum update
+       #- yum install zip
   build:
     commands:
        - zip –r HistLambda.zip HistLambda
