@@ -1,6 +1,7 @@
 version: 0.2
 
-#env:
+env:
+  - dev
   #variables:
      # key: "value"
      # key: "value"
@@ -35,11 +36,12 @@ phases:
       # - command
   build:
     commands:
-      # - command
+       - zip –r HistLambda.zip HistLambda
+       - aws s3 cp HistLambda.zip s3://edm-csd-datalake-${env}/HistLambda.zip
       # - command
   post_build:
     commands:
-      - aws lambda update-function-code \--function-name  historical-service-dev \--s3-bucket edm-csd-datalake-dev --s3-key HistLambda.zip
+      - aws lambda update-function-code \--function-name  historical-service-dev \--s3-bucket edm-csd-datalake-${env} --s3-key HistLambda.zip
 #reports:
   #report-name-or-arn:
     #files:
