@@ -36,7 +36,7 @@ phases:
   build:
     commands:
        - zip –r HistLambda.zip HistLambda
-       - aws s3 cp HistLambda.zip s3://edm-csd-datalake-dev/HistLambda.zip
+       - aws s3 cp HistLambda.zip s3://edm-csd-datalake-dev/
       # - command
   post_build:
     commands:
