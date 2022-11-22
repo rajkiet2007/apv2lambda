@@ -1,0 +1,12 @@
+version: 0.0
+Resources:
+  - historical-service-dev:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "historical-service-dev"
+        Alias: "historical-service-dev:1"
+        CurrentVersion: "1"
+        TargetVersion: "2"
+Hooks:
+  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
+  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
